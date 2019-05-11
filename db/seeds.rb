@@ -1,0 +1,2 @@
+Movie.create(title: "Rocky", year: 1976, plot:"A small-time boxer gets a supremely rare chance to fight a heavy-weight champion in a bout in which he strives to go the distance for his self-respect.")
+Movie.create(title: "Doctor Zhivago", year: 1965, plot: "The life of a Russian physician and poet who, although married to another, falls in love with a political activist's wife and experiences hardship during World War I and then the October Revolution." )
