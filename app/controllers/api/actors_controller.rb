@@ -23,8 +23,15 @@ class Api::ActorsController < ApplicationController
         gender: params[:gender],
         age: params[:age]
         )
-    @actor.save
-    render 'show.json.jbuilder'
+    
+    if @actor.save
+         #happy path
+         render 'show.json.jbuilder'
+    else
+         #sad path
+         render json: {errors: @actor.errors.full_messages}, status: 422
+    end     
+
   end
 
   def update
@@ -36,9 +43,15 @@ class Api::ActorsController < ApplicationController
     @actor.gender = params[:gender] || @actor.gender
     @actor.age = params[:age] || @actor.age
     
+    
+    if @actor.save
+         #happy path
+         render 'show.json.jbuilder'
+    else
+         #sad path
+         render json: {errors: @actor.errors.full_messages}, status: unprocessable_entity
+    end     
 
-    @actor.save
-    render 'show.json.jbuilder' 
   end
 
   def destroy
