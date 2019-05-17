@@ -2,6 +2,15 @@ class Api::MoviesController < ApplicationController
   
    def index
      @movies = Movie.all
+
+     if params[:english] == "true"
+         @movies = @movies.where(english: true)
+     end  
+     
+     if params[:english] == "false"
+         @movies = @movies.where(english: false)
+     end 
+
      render 'index.json.jbuilder'  
    end
 
