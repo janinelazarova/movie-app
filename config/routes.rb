@@ -2,17 +2,6 @@ Rails.application.routes.draw do
  
  #get "display_actor"=>"actors#display_actor"
   namespace :api do
-   
-    #get "/display_all_movies" => "movies#all_movies_action"
-
-    #get "/display_one_movie/:id" => "movies#one_movie_action"
-
-    #get "/actors" => "movies#show_query_param"
-  
-    #get "/actors/:id" => "movies#show_url_segment_param"
-  
-    #post "/actors" => "movies#show_body_param"
-
     
     get "/actors" => "actors#index"
 
@@ -38,5 +27,7 @@ Rails.application.routes.draw do
     post "/movie_genres" => "movie_genres#create"
 
   end
+
+  get "/movies/:id" => "movies#show"
 
 end
